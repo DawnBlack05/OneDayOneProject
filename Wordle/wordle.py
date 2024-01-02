@@ -93,7 +93,6 @@ while running:
         words_commited = []
         answer = choice(vocab)
         vocab.remove(answer)
-        print(answer)
     
     # game over
     if len(words_commited) == 10:
