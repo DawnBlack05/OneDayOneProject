@@ -72,7 +72,9 @@ while running:
     for idx, commited_word in enumerate(words_commited):
         for pos, alphabet in enumerate(commited_word):
             if alphabet in answer:
-                if answer[pos] == alphabet:
+                if answer.count(alphabet) <= commited_word[:pos].count(alphabet):
+                    pg.draw.rect(screen, GRAY, (130 + pos*36 + idx//5 * 360, 200 + idx%5 * 100, 36, 72))
+                elif answer[pos] == alphabet:
                     pg.draw.rect(screen, GREEN, (130 + pos*36 + idx//5 * 360, 200 + idx%5 * 100, 36, 72))
                 else:
                     pg.draw.rect(screen, YELLOW, (130 + pos*36 + idx//5 * 360, 200 + idx%5 * 100, 36, 72))
